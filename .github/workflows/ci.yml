@@ -37,7 +37,7 @@ jobs:
       - name: Create Release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Build Folder
         if: github.event_name == 'push'
