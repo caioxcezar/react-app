@@ -1,5 +1,5 @@
-import github from "@actions/github";
-import core from "@actions/core";
+const github = require("@actions/github");
+const core = require("@actions/core");
 
 try {
   //throw new Error("some erro message");

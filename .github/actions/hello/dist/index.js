@@ -48,8 +48,6 @@ module.exports = /******/ (function (modules, runtime) {
     /******/ return __webpack_require__(239);
     /******/
   }
-  /******/ // initialize runtime
-  /******/ runtime(__webpack_require__);
   /******/
   /******/ // run startup
   /******/ return startup();
@@ -1981,32 +1979,22 @@ module.exports = /******/ (function (modules, runtime) {
       /***/
     },
 
-    /***/ 239: /***/ function (__unusedmodule, __webpack_exports__, __webpack_require__) {
-      "use strict";
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_0__ =
-        __webpack_require__(469);
-      /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_0___default =
-        /*#__PURE__*/ __webpack_require__.n(_actions_github__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ =
-        __webpack_require__(470);
-      /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1___default =
-        /*#__PURE__*/ __webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_1__);
+    /***/ 239: /***/ function (__unusedmodule, __unusedexports, __webpack_require__) {
+      const github = __webpack_require__(469);
+      const core = __webpack_require__(470);
 
       try {
         //throw new Error("some erro message");
-        const name = _actions_core__WEBPACK_IMPORTED_MODULE_1___default().getInput("who-to-greet");
+        const name = core.getInput("who-to-greet");
 
         console.log(`Hello ${name}`);
 
         const time = new Date();
-        _actions_core__WEBPACK_IMPORTED_MODULE_1___default().setOutput("time", time.toTimeString());
+        core.setOutput("time", time.toTimeString());
 
-        console.log(
-          JSON.stringify(_actions_github__WEBPACK_IMPORTED_MODULE_0___default.a, null, "\t")
-        );
+        console.log(JSON.stringify(github, null, "\t"));
       } catch (error) {
-        _actions_core__WEBPACK_IMPORTED_MODULE_1___default().setFailed(error.message);
+        core.setFailed(error.message);
       }
 
       /***/
@@ -19295,59 +19283,6 @@ module.exports = /******/ (function (modules, runtime) {
       /***/
     }
 
-    /******/
-  },
-  /******/ function (__webpack_require__) {
-    // webpackRuntimeModules
-    /******/ "use strict";
-    /******/
-    /******/ /* webpack/runtime/make namespace object */
-    /******/ !(function () {
-      /******/ // define __esModule on exports
-      /******/ __webpack_require__.r = function (exports) {
-        /******/ if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
-          /******/ Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-          /******/
-        }
-        /******/ Object.defineProperty(exports, "__esModule", { value: true });
-        /******/
-      };
-      /******/
-    })();
-    /******/
-    /******/ /* webpack/runtime/compat get default export */
-    /******/ !(function () {
-      /******/ // getDefaultExport function for compatibility with non-harmony modules
-      /******/ __webpack_require__.n = function (module) {
-        /******/ var getter =
-          module && module.__esModule
-            ? /******/ function getDefault() {
-                return module["default"];
-              }
-            : /******/ function getModuleExports() {
-                return module;
-              };
-        /******/ __webpack_require__.d(getter, "a", getter);
-        /******/ return getter;
-        /******/
-      };
-      /******/
-    })();
-    /******/
-    /******/ /* webpack/runtime/define property getter */
-    /******/ !(function () {
-      /******/ // define getter function for harmony exports
-      /******/ var hasOwnProperty = Object.prototype.hasOwnProperty;
-      /******/ __webpack_require__.d = function (exports, name, getter) {
-        /******/ if (!hasOwnProperty.call(exports, name)) {
-          /******/ Object.defineProperty(exports, name, { enumerable: true, get: getter });
-          /******/
-        }
-        /******/
-      };
-      /******/
-    })();
-    /******/
     /******/
   }
 );
